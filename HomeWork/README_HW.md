@@ -1,3 +1,5 @@
+# Задания для "HomeWork"
+
 ## Урок 1. Знакомство с Python
 
 1. Сформировать список из N членов последовательности. Для N = 5: 1, -3, 9, -27, 81 и т.д.
@@ -8,4 +10,4 @@
 
 Для тех, кому мало этих задач и хочется больше потренироваться:
 
-[https://cloud.mail.ru/public/DQNB/Wu1EywKu3](%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8.txt)
+[https://cloud.mail.ru/public/DQNB/Wu1EywKu3](/HomeWork/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8.txt)
