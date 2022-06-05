@@ -91,7 +91,7 @@ def delete_even_number_from_file(file_name):
     with open("HomeWork3_5.txt",'r') as data:
         for line in data:
             iter_data = [int(x) for x in line.split()]
-            new_data = ''
+        new_data = ''
         for el in iter_data:
             if el % 2 != 0: new_data += str(el) + " "
     
