@@ -20,7 +20,7 @@
 import random
 def create_file_random_number(quantity, file_name):
     with open(file_name, 'w') as data:
-        for i in range(101):
+        for i in range(quantity):
             new_data = str(random.randint(0, 100)) + "\n"
             data.write(new_data)
 
@@ -32,31 +32,23 @@ def print_file_content(file_name):
     data.close()
 
 def sort_number_in_file(file_name):
-    data_from_file = []
     with open(file_name, 'r') as data:
-        for line in data:
-            data_from_file = [int(x) for x in line.split()]
-        new_data = data_from_file.sort()
+        data_from_file = data.readlines()
+        list_from_file = list(map(int, data_from_file))
+        
+    list_from_file.sort()
 
     with open(file_name, 'w') as data:
-        data.write(new_data)
-'''def delete_even_number_from_file(file_name):
-    iter_data = []
-    with open("HomeWork3_5.txt",'r') as data:
-        for line in data:
-            iter_data = [int(x) for x in line.split()]
-            new_data = ''
-        for el in iter_data:
-            if el % 2 != 0: new_data += str(el) + " "
-    
-    with open(file_name, 'w') as data:
-        data.write(new_data)
-'''
+        for i in list_from_file:
+            data.write(f'{i}\n')
+
+
 file = 'newFile.txt'
-create_file_random_number(100, file)
-print_file_content(file)
-sort_number_in_file(file)
 
+create_file_random_number(5, file)
+print_file_content(file)
+
+sort_number_in_file(file)
 print_file_content(file)
 
 '''
@@ -68,10 +60,30 @@ print_file_content(file)
 (решение будет долгим, ибо является демонстрационным 
 при теме многопоточного программирования).
 '''
+exit()
+path = 'HomeWork/1Kints.txt'
 
-path = '/HomeWork/1Kints.txt'
-data = open(path, 'r')
-for line in data:
-    
-    print(line)
-data.close()
+# data = open(path, 'r')
+# for line in data:
+#     i = line
+#     print(f'i {i}')
+#     for line in data:
+#         j = line
+#         print(f'j {j}')
+#         for line in data:
+#             k = line
+#             if i+j+k == 0: print(i, j, k)
+# data.close()
+
+with open(path, 'r') as data:
+    input_list = data.readlines()
+    #input_list.pop()
+    list_val = list(map(int, input_list))
+count = 0
+for i in list_val:
+    for j in list_val:
+        for k in list_val:
+            if(i + j + k == 0):
+                print(f'{i} , {j} , {k}')
+                count += 1
+print(f'Количество триплетов равно {count}')
