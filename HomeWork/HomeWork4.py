@@ -10,8 +10,20 @@
 
 Порядок элементов менять нельзя
 '''
-# Не понял самого алгоритма, пока что
+# Не понял самого алгоритма, пока что 
+# (то, что написано ниже , на мой взгляд, не удовлетворяет условию задачи)
 
+def make_up_sequence(nums):
+    up_seq = []
+    for i in range(len(nums)):
+        if nums[i] == max(nums[:i+1:]) and nums[i] not in up_seq:
+            up_seq.append(nums[i])
+    return up_seq
+
+nums = [1, 5, 2, 3, 4, 6, 1, 7]
+up_sequence = make_up_sequence(nums)
+print(up_sequence)
+exit()
 
 '''
 2. Создать и заполнить файл случайными целыми значениями. 
@@ -62,18 +74,6 @@ print_file_content(file)
 '''
 exit()
 path = 'HomeWork/1Kints.txt'
-
-# data = open(path, 'r')
-# for line in data:
-#     i = line
-#     print(f'i {i}')
-#     for line in data:
-#         j = line
-#         print(f'j {j}')
-#         for line in data:
-#             k = line
-#             if i+j+k == 0: print(i, j, k)
-# data.close()
 
 with open(path, 'r') as data:
     input_list = data.readlines()
