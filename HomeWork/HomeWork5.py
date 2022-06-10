@@ -6,14 +6,14 @@
 
  Пример: «абвгдеж рабав копыто фабв Абкн абрыволк аБволк»
 '''
-# def del_substring(any_string, substring):
-#     string_to_list = any_string.split(' ')
-#     result_list = list(filter(lambda word: substring.lower() not in word.lower(), string_to_list))
-#     return ' '.join(result_list)
+def del_substring(any_string, substring):
+    string_to_list = any_string.split(' ')
+    result_list = list(filter(lambda word: substring.lower() not in word.lower(), string_to_list))
+    return ' '.join(result_list)
 
-# our_text = 'абвгдеж рабав копыто фабв Абкн абрыволк аБволк'
-# delete_text = 'абв'
-# print(del_substring(our_text, delete_text))
+our_text = 'абвгдеж рабав копыто фабв Абкн абрыволк аБволк'
+delete_text = 'абв'
+print(del_substring(our_text, delete_text))
 
 
 '''
@@ -21,56 +21,56 @@
  Попробуйте создать её, причем чтобы сыграть в нее 
  можно было в одиночку.
 '''
-# def make_area(area):
-#     for i in range(3):
-#         print ('-' * 13)
-#         print ('|', area[0+i*3], '|', area[1+i*3], '|', area[2+i*3], '|')
-#     print ('-' * 13)
+def make_area(area):
+    for i in range(3):
+        print ('-' * 13)
+        print ('|', area[0+i*3], '|', area[1+i*3], '|', area[2+i*3], '|')
+    print ('-' * 13)
 
-# def motion(symbol_player):
-#     valid = False
-#     while not valid:
-#         move = int(input(f'Ход игрока: {symbol_player}, выберите клетку '))
+def motion(symbol_player):
+    valid = False
+    while not valid:
+        move = int(input(f'Ход игрока: {symbol_player}, выберите клетку '))
 
-#         if 1 <= int(move) <= 9:
-#             if (str(area[move-1]) not in "XO"):
-#                 area[move-1] = symbol_player
-#                 valid = True
-#             else:
-#                 print ('Сюда уже ходили')
-#         else:
-#             print ('Некорректный ввод. Введите число от 1 до 9')
+        if 1 <= int(move) <= 9:
+            if (str(area[move-1]) not in "XO"):
+                area[move-1] = symbol_player
+                valid = True
+            else:
+                print ('Сюда уже ходили')
+        else:
+            print ('Некорректный ввод. Введите число от 1 до 9')
 
-# def win_combo(area):
-#     combination = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
-#     for combo in combination:
-#         if area[combo[0]] == area[combo[1]] == area[combo[2]]:
-#             return area[combo[0]]
-#     return False
+def win_combo(area):
+    combination = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
+    for combo in combination:
+        if area[combo[0]] == area[combo[1]] == area[combo[2]]:
+            return area[combo[0]]
+    return False
 
-# def game_xo(area):
-#     count = 0
-#     win = False
-#     while not win:
-#         make_area(area)
-#         if count % 2 == 0:
-#             motion('X')
-#         else:
-#             motion('O')
-#         count += 1
-#         if count > 4:
-#             player = win_combo(area)
-#             if player:
-#                 print (f'Игрок: {player}, выиграл!!!')
-#                 win = True
-#                 break
-#         if count == 9:
-#             print (';-)  Ничья!!!')
-#             break
-#     make_area(area)
+def game_xo(area):
+    count = 0
+    win = False
+    while not win:
+        make_area(area)
+        if count % 2 == 0:
+            motion('X')
+        else:
+            motion('O')
+        count += 1
+        if count > 4:
+            player = win_combo(area)
+            if player:
+                print (f'Игрок: {player}, выиграл!!!')
+                win = True
+                break
+        if count == 9:
+            print (';-)  Ничья!!!')
+            break
+    make_area(area)
 
-# area = list(range(1,10))
-# game_xo(area)
+area = list(range(1,10))
+game_xo(area)
 
 
 '''
